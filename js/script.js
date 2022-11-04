@@ -1,4 +1,5 @@
 const {createApp} = Vue;
+const dt = luxon.DateTime;
 createApp({
     data() {
         return{
@@ -163,11 +164,14 @@ createApp({
                             status: 'received'
                         }
                     ]
-                    
+
                 }
             ],
             image: "",
-            activePosition: 0
+            activePosition: 0,
+            myMessage: "",
+            receivedMessage: "ok",
+            now: null
         }
     },
     methods:{
@@ -178,8 +182,47 @@ createApp({
             console.log(this.image);
         },
         activeCurrentContact(position){
+            //la posizione viene settata all'indice dell'elemento corrente
            this.activePosition = position;
+        },
+        createNewMessage(position){
+            let newMessage = null;
+            this.getDate();
+            //viene creato un nuovo oggetto con lo status 'sent'
+            newMessage = {
+                            date: `${this.now}`,
+                            message: `${this.myMessage}`,
+                            status: "sent"
+                            };
+            //l'oggetto viene pusciato nell'array dei messaggi del contatto corrente
+            this.contacts[position].messages.push(newMessage);
+            //ripuliamo l'input di testo
+            this.myMessage = "";
+            console.log(this.contacts);
+        },
+        createMessageReceived(){
+            let newReceivedMessage = null;
+            this.getDate();
+            //viene creato un nuovo oggetto con lo status 'received'
+            newReceivedMessage = {
+                                date: `${this.now}`,
+                                message: `${this.receivedMessage}`,
+                                status: "received"
+                                };
+             //l'oggetto viene pusciato nell'array dei messaggi del contatto corrente
+            this.contacts[this.activePosition].messages.push(newReceivedMessage);
+            console.log(this.contacts);
+        },
+        addReceivedMessage(){
+            //dopo 1 secondo dalla pressione di enter viene eseguito la funzione precedente
+            setTimeout(this.createMessageReceived, 1000);
+        },
+        getDate(){
+        this.now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+        console.log(this.now);
+        return this.now;  
         }
 
-    } 
+    }
+    
 }).mount("#app");

@@ -7,6 +7,7 @@
     <title>boolzapp</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -95,7 +96,7 @@
                             :class="messages.status === 'sent' ? 'sent' : 'received'">
                                 <p> {{messages.message}} </p>
                                 <div class="time">
-                                    <span>15:30</span>
+                                    <span> {{messages.date}} </span>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +104,11 @@
                     <div class="text-area">
                         <i class="fa-regular fa-face-smile"></i>
                         <label for="send-text" class="d-none"></label>
-                        <input type="text" placeholder="Scrivi un messaggio" id="send-text">
+                        <input type="text" 
+                        placeholder="Scrivi un messaggio" 
+                        id="send-text"
+                        v-model="myMessage"
+                        @keyup.enter="createNewMessage(activePosition), addReceivedMessage()">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </main>
