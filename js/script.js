@@ -167,6 +167,7 @@ createApp({
                 }
             ],
             image: "",
+            activePosition: 0
         }
     },
     methods:{
@@ -175,6 +176,9 @@ createApp({
             this.image = `img/avatar${element.avatar}.jpg`;
             return(this.image);
             console.log(this.image);
+        },
+        activeCurrentContact(position){
+           this.activePosition = position;
         }
 
     } 

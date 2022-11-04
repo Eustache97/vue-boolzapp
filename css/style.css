@@ -17,6 +17,9 @@ img{
 .mr-05{
     margin-right: .5em;
 }
+.active{
+    background-color: lightgrey;
+}
 /* commons */
 body{
     background-color: grey;

@@ -15,7 +15,7 @@
             <div class="contact-area">
                 <header>
                     <div class="header-baar">
-                        <img class="picture" src="img/avatar_1.jpg" alt="avatar_1">
+                        <img class="picture" src="img/avatar_io.jpg" alt="avatar_io">
                         <div class="baar-inner">
                             <h4>Sofia</h4>
                             <div class="profile-option">
@@ -50,7 +50,9 @@
                     <div class="contact-list">
                         <div 
                         class="baar"
-                        v-for="(contact, index) in contacts">
+                        v-for="(contact, index) in contacts"
+                        :class="activePosition === index ? 'active' : ''"
+                        @click="activeCurrentContact(index)">
                             <img 
                              :src="generateImage(index)" alt="" class="picture">
                             <div class="baar-inner">
@@ -69,10 +71,11 @@
             <div class="conversation-area">
                 <header>
                     <div class="header-baar">
-                        <img class="picture" src="img/avatar_2.jpg" alt="avatar_1">
+                        <img class="picture" 
+                        :src="generateImage(activePosition)" alt="avatar">
                         <div class="baar-inner">
                             <div class="info">
-                                <h4>Michele</h4>
+                                <h4> {{contacts[activePosition].name}} </h4>
                                 <p>Ultimo accesso oggi alle 12:00</p>
                             </div> 
                             <div class="profile-option">
@@ -85,22 +88,15 @@
                 </header>
                 <main>
                     <div class="message-area">
-                        <div class="message">
-                            <div class="sent">
-                                <p>Hai portato a spasso il cane?</p>
+                        <div 
+                        class="message"
+                        v-for="(messages) in contacts[activePosition].messages">
+                            <div 
+                            :class="messages.status === 'sent' ? 'sent' : 'received'">
+                                <p> {{messages.message}} </p>
                                 <div class="time">
                                     <span>15:30</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="message">
-                            <div class="sent">
-                                <p>Ricordati di stendere i panni</p> 
-                            </div>
-                        </div>
-                        <div class="message">
-                            <div class="received">
-                                <p>Tutto fatto!</p> 
                             </div>
                         </div>
                     </div>
