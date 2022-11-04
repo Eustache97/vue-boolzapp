@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolzapp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="wrapper">
+            <div class="contact-area">
+                <header>
+                    <div class="header-baar">
+                        <img class="picture" src="img/avatar_1.jpg" alt="avatar_1">
+                        <div class="baar-inner">
+                            <h4>Sofia</h4>
+                            <div class="profile-option">
+                                <i class="fa-solid fa-circle-notch mr-05"></i>
+                                <i class="fa-solid fa-message mr-05"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mr-05"></i>
+                            </div>
+                        </div>  
+                    </div>
+                </header>
+                <main>
+                    <div class="notification baar">
+                        <div class="picture">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="notification-text baar-inner">
+                            <div class="info">
+                                <h4>Ricevi notifiche di nuovi messaggi</h4>
+                                <p><a href="">Attiva le notifiche deckstop</a></p>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="search-contact">
+                        <div class="button-search">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <div class="input-search">
+                            <label for="search" class="d_none">inserisci nome contatto</label>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" id="search">
+                        </div>
+                    </div>
+                    <div class="contact-list">
+                        <div 
+                        class="baar"
+                        v-for="(contact, index) in contacts">
+                            <img 
+                             :src="generateImage(index)" alt="" class="picture">
+                            <div class="baar-inner">
+                                <div class="info">
+                                    <h4> {{contact.name}} </h4>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="conversation-area">
+                <header>
+                    <div class="header-baar">
+                        <img class="picture" src="img/avatar_2.jpg" alt="avatar_1">
+                        <div class="baar-inner">
+                            <div class="info">
+                                <h4>Michele</h4>
+                                <p>Ultimo accesso oggi alle 12:00</p>
+                            </div> 
+                            <div class="profile-option">
+                                <i class="fa-solid fa-magnifying-glass mr-05"></i>
+                                <i class="fa-solid fa-paperclip mr-05"></i>
+                                <i class="fa-solid fa-ellipsis-vertical mr-05"></i>
+                            </div>
+                        </div>  
+                    </div>
+                </header>
+                <main>
+                    <div class="message-area">
+                        <div class="message">
+                            <div class="sent">
+                                <p>Hai portato a spasso il cane?</p>
+                                <div class="time">
+                                    <span>15:30</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="sent">
+                                <p>Ricordati di stendere i panni</p> 
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="received">
+                                <p>Tutto fatto!</p> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-area">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <label for="send-text" class="d-none"></label>
+                        <input type="text" placeholder="Scrivi un messaggio" id="send-text">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+/* /reset */
+.d_inl-block{
+    display: inline-block;
+}
+.d_none{
+    display: none;
+}
+.mr-05{
+    margin-right: .5em;
+}
+/* commons */
+body{
+    background-color: grey;
+}
+
+i{
+    font-size: 1rem;
+    cursor: pointer;
+}
+:root{
+    --wrapper_height: calc(100vh - 2em);
+    --baar_padding: 1em;
+    --header-baar_padding: .3em;
+    --search-contact_padding: .5em;
+    --contact-area_width: 40%;
+    --contact-list_height: calc(var(--wrapper_height) - var(--header_height) - var(--baar_height) - var(--search-contact_height));
+    --picture_height: 50px;
+    --search-contact_height: 50px;
+    --baar_height: calc(var(--picture_height) + (var(--baar_padding) * 2));
+    --header_height: calc(var(--picture_height) + (var(--header-baar_padding) * 2));
+    --message_min-height: 40px;
+}
+
+.container{
+    width: 80%;
+    padding: 1em 0 1em;
+    margin: 0 auto;
+}
+header{
+    height: var(--header_height);
+}
+.header-baar,
+.baar{
+    display: flex;
+}
+.time{
+    color: grey;
+    font-size: .5rem;
+}
+.baar{
+    height: var(--baar_height);
+    padding: var(--baar_padding);
+}
+.header-baar{
+    background-color: lightgrey;
+    padding: var(--header-baar_padding);
+}
+.baar-inner{
+    width: calc(100% - var(--picture_height) - .5em);
+    display: flex;
+    margin-left: .5em;
+    justify-content: space-between;
+}
+.baar-inner .info p,
+.baar-inner .time{
+    color: grey;
+    font-size: .8rem;
+}
+header .baar-inner,
+.notification .baar-inner{
+    align-items: center;
+}
+.profile-option{
+    color: grey;
+}
+.picture{
+    width: var(--picture_height);
+    height: var(--picture_height);
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: white;
+}
+.wrapper{
+    height: var(--wrapper_height);
+    width: 100%;
+    display: flex;
+}
+/* /commons */
+/* contact-area */
+.contact-area{
+    height: 100%;
+    width: 40%;
+    background-color: aqua;
+}
+.contact-area header{
+    border-right: 1px solid grey;
+}
+.notification{
+    background-color: aqua;
+}
+.notification .picture {
+    color:aqua;
+    text-align: center;
+    line-height: var(--picture_height);
+}
+
+.notification-text a{
+    color: inherit;
+} 
+.search-contact{
+    width: 100%;
+    height: var(--search-contact_height);
+    background-color: white;
+    display: flex;
+    color: grey;
+    padding: var(--search-contact_padding);
+    background-color: #e7e4e4;
+}
+.search-contact .input-search{
+    width: 80%;
+}
+.input-search #search,
+.text-area #send-text{
+    height: 100%;
+    border: unset;
+    padding:.3em;
+    border-radius: 5px;
+}
+.input-search #search{
+    width: 100%;
+}
+.search-contact .button-search{
+    width: 20%;
+}
+.button-search button{
+    width: 100%;
+    height: 100%;
+    color: grey;
+    padding: .3em;
+    border: unset;
+    border-radius: 5px;
+    background-color: white;
+    border-right: 1px solid lightgrey;
+    cursor: pointer;
+}
+.contact-list{
+    width: 100%;
+    height: var(--contact-list_height);
+    background-color: white;
+    overflow-y: scroll;
+}
+.contact-list .baar{
+    border-bottom: 1px solid lightgrey;
+}
+/* conversation-area */
+.conversation-area{
+    height: 100%;
+    width: calc(100% - var(--contact-area_width));
+    background-color: chocolate;
+}
+/* message-area */
+.message-area{
+    width: 100%;
+    height: calc(var(--wrapper_height) - (var(--header_height) * 2));
+    background-image: url("../img/mine.jpg");
+    background-attachment: fixed;
+    position: relative;
+    overflow-y: scroll;
+    padding: 0 2.5em;
+}
+.sent,
+.received{
+    min-width: 60px;
+    max-width: 200px;
+    min-height: var(--message_min-height);
+    margin: 1em 0;
+    padding: 0 .5em;
+    padding-top: .5em;
+    border-radius: 5px;
+    position: relative;
+}
+.sent{
+    margin-left: auto;
+    background-color: lightgreen;
+}
+.received{
+    margin-right: auto;
+    background-color: white;
+}
+.sent .time,
+.received .time{
+   position: absolute;
+   bottom: 0;
+   right: 5px;
+}
+/* text-area */
+.text-area{
+    width: 100%;
+    height: var(--header_height);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: .3em;
+    background-color: lightgrey;
+}
+.text-area #send-text{
+    width: 80%;
+}
+.text-area i{
+    color: grey;
+}
+
