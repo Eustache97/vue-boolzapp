@@ -170,6 +170,7 @@ createApp({
             image: "",
             activePosition: 0,
             myMessage: "",
+            contactSearched: "",
             receivedMessage: "ok",
             now: null
         }
@@ -221,6 +222,34 @@ createApp({
         this.now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
         console.log(this.now);
         return this.now;  
+        },
+        // transformWord(word){
+        //     let correctWord = word.toLowerCase();
+        //     correctWord = correctWord[0].toUpperCase() + correctWord.slice(1);
+        //     console.log(correctWord);
+        //     word = correctWord;
+        // },
+        searchContacts(array){
+            // this.transformWord(this.contactSearched);
+
+            //trasformiamo l'input in minuscolo
+            let correctWord = this.contactSearched.toLowerCase();
+            //trasformiamo la prima lettera dell'input in maiuscolo e lo concateniamo al resto della parola
+            correctWord = correctWord[0].toUpperCase() + correctWord.slice(1);
+            console.log(correctWord);
+            this.contactSearched = correctWord;
+            console.log(this.contactSearched);
+            array.forEach(element => {
+                //Se l'elemento corrente inizia con la parola in input
+                if(element.name.startsWith(this.contactSearched)){
+                element.visible = true;
+               }else{
+                element.visible = false;
+               } 
+               console.log(element.visible);
+            });
+            //resettiamo l'input
+            this.contactSearched = "";
         }
 
     }

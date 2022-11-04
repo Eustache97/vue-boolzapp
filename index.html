@@ -41,17 +41,25 @@
                     </div>
                     <div class="search-contact">
                         <div class="button-search">
-                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button
+                            @click="searchContacts(contacts)">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </div>
                         <div class="input-search">
                             <label for="search" class="d_none">inserisci nome contatto</label>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" id="search">
+                            <input type="text" 
+                                placeholder="Cerca o inizia una nuova chat" 
+                                id="search"
+                                v-model.trim="contactSearched"
+                                @keyup.enter="searchContacts(contacts)">
                         </div>
                     </div>
                     <div class="contact-list">
                         <div 
                         class="baar"
                         v-for="(contact, index) in contacts"
+                        v-show="contact.visible"
                         :class="activePosition === index ? 'active' : ''"
                         @click="activeCurrentContact(index)">
                             <img 
