@@ -8,14 +8,17 @@ img{
     max-width: 100%;
 }
 /* /reset */
-.d_inl-block{
-    display: inline-block;
+.d_block{
+    display: block;
 }
 .d_none{
     display: none;
 }
 .mr-05{
     margin-right: .5em;
+}
+.txt-align_right{
+    text-align: right;
 }
 .active{
     background-color: lightgrey;
@@ -204,6 +207,27 @@ header .baar-inner,
    position: absolute;
    bottom: 0;
    right: 5px;
+}
+.sent .pop_up-option,
+.received .pop_up-option{
+    width: 150px;
+    background-color: white;
+    position: absolute;
+    top: 110%;
+    left: 50px;
+    box-shadow: 3px 3px 3px 3px grey;
+    z-index: 999;
+
+}
+.pop_up-option a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding-left: 1em;
+    line-height: 30px ;
+}
+.pop_up-option a:hover{
+    background-color: lightgrey;
 }
 /* text-area */
 .text-area{

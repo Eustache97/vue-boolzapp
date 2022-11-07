@@ -10,17 +10,23 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:30',
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:50',
                             message: 'Ricordati di stendere i panni',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'16:15',
                             message: 'Tutto fatto!',
                             status: 'received'
                         }
@@ -32,17 +38,23 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '20/03/2020 16:30:00',
+                            clicked: false,
+                            date: '20/03/2020',
+                            hour:'16:30',
                             message: 'Ciao come stai?',
                             status: 'sent'
                         },
                         {
-                            date: '20/03/2020 16:30:55',
+                            clicked: false,
+                            date: '20/03/2020',
+                            hour:'16:30',
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received'
                         },
                         {
-                            date: '20/03/2020 16:35:00',
+                            clicked: false,
+                            date: '20/03/2020',
+                            hour:'16:35',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
@@ -54,17 +66,23 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '28/03/2020 10:10:40',
+                            clicked: false,
+                            date: '28/03/2020',
+                            hour:'10:10',
                             message: 'La Marianna va in campagna',
                             status: 'received'
                         },
                         {
-                            date: '28/03/2020 10:20:10',
+                            clicked: false,
+                            date: '28/03/2020',
+                            hour:'10:20',
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent'
                         },
                         {
-                            date: '28/03/2020 16:15:22',
+                            clicked: false,
+                            date: '28/03/2020',
+                            hour:'16:15',
                             message: 'Ah scusa!',
                             status: 'received'
                         }
@@ -76,12 +94,16 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:30',
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:50',
                             message: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         }
@@ -93,12 +115,16 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:30',
                             message: 'Ricordati di chiamare la nonna',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:50',
                             message: 'Va bene, stasera la sento',
                             status: 'received'
                         }
@@ -110,17 +136,23 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:30',
                             message: 'Ciao Claudia, hai novità?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:50',
                             message: 'Non ancora',
                             status: 'received'
                         },
                         {
-                            date: '10/01/2020 15:51:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:51',
                             message: 'Nessuna nuova, buona nuova',
                             status: 'sent'
                         }
@@ -132,12 +164,16 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:30',
                             message: 'Fai gli auguri a Martina che è il suo compleanno!',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:50',
                             message: 'Grazie per avermelo ricordato, le scrivo subito!',
                             status: 'received'
                         }
@@ -149,17 +185,23 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:30',
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
                             status: 'received'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:50',
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:51:00',
+                            clicked: false,
+                            date: '10/01/2020',
+                            hour:'15:51',
                             message: 'OK!!',
                             status: 'received'
                         }
@@ -172,7 +214,8 @@ createApp({
             myMessage: "",
             contactSearched: "",
             receivedMessage: "ok",
-            now: null
+            nowHour: null,
+            nowDate: null
         }
     },
     methods:{
@@ -188,10 +231,12 @@ createApp({
         },
         createNewMessage(position){
             let newMessage = null;
-            this.getDate();
+            this.getDateAndHour();
             //viene creato un nuovo oggetto con lo status 'sent'
             newMessage = {
-                            date: `${this.now}`,
+                            clicked: false,
+                            date: `${this.nowDate}`,
+                            hour: `${this.nowHour}`,
                             message: `${this.myMessage}`,
                             status: "sent"
                             };
@@ -203,10 +248,12 @@ createApp({
         },
         createMessageReceived(){
             let newReceivedMessage = null;
-            this.getDate();
+            this.getDateAndHour();
             //viene creato un nuovo oggetto con lo status 'received'
             newReceivedMessage = {
-                                date: `${this.now}`,
+                                clicked: false,
+                                date: `${this.nowDate}`,
+                                hour: `${this.nowHour}`,
                                 message: `${this.receivedMessage}`,
                                 status: "received"
                                 };
@@ -218,9 +265,11 @@ createApp({
             //dopo 1 secondo dalla pressione di enter viene eseguito la funzione precedente
             setTimeout(this.createMessageReceived, 1000);
         },
-        getDate(){
-        this.now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-        console.log(this.now);
+        getDateAndHour(){
+        this.nowHour = dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE);
+        this.nowDate = dt.now().setLocale('it').toLocaleString(dt.DATE_SHORT);
+        console.log(this.nowHour);
+        console.log(this.nowDate);
         return this.now;  
         },
         // transformWord(word){
@@ -250,6 +299,20 @@ createApp({
             });
             //resettiamo l'input
             this.contactSearched = "";
+        },
+        popUpVisibility(position,index){
+            //se clicked dell'attuale messaggio è true
+            if(this.contacts[position].messages[index].clicked === true){
+                //lo setto a false
+                this.contacts[position].messages[index].clicked = false;
+            }else{
+                //altrimenti lo setto a true
+                this.contacts[position].messages[index].clicked = true;
+            }
+            console.log(this.contacts[position].messages[index].clicked);
+        },
+        deleteMessage: function(position, messageIndex){
+            this.contacts[position].messages.splice(messageIndex, 1);
         }
 
     }

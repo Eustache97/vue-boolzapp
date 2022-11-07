@@ -67,10 +67,21 @@
                             <div class="baar-inner">
                                 <div class="info">
                                     <h4> {{contact.name}} </h4>
-                                    <p>Ultimo messaggio inviato</p>
+                                    <p> {{contact.messages[contact.messages.length - 1].message}} </p>
                                 </div>
-                                <div class="time">
-                                    <span>12:00</span>
+                                <div class="time txt-align_right">
+                                    <p
+                                    v-if="contact.messages[contact.messages.length - 1].date === nowDate">
+                                        <span class="d_block">oggi</span>
+                                        <span class="d_block"> {{contact.messages[contact.messages.length - 1].hour}} </span>
+                                    </p>
+                                    <p
+                                    v-else>
+                                    <span class="d_block"> {{contact.messages[contact.messages.length - 1].date}} </span>
+                                    <span class="d_block"> {{contact.messages[contact.messages.length - 1].hour}} </span>
+                                    </p>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -85,7 +96,14 @@
                         <div class="baar-inner">
                             <div class="info">
                                 <h4> {{contacts[activePosition].name}} </h4>
-                                <p>Ultimo accesso oggi alle 12:00</p>
+                                <p
+                                    v-if="contacts[activePosition].messages[contacts[activePosition].messages.length - 1].date === nowDate">
+                                        Ultimo accesso oggi alle {{contacts[activePosition].messages[contacts[activePosition].messages.length - 1].hour}}
+                                    </p>
+                                    <p
+                                    v-else>
+                                    Ultimo accesso {{contacts[activePosition].messages[contacts[activePosition].messages.length - 1].date}} alle {{contacts[activePosition].messages[contacts[activePosition].messages.length - 1].hour}}
+                                    </p>
                             </div> 
                             <div class="profile-option">
                                 <i class="fa-solid fa-magnifying-glass mr-05"></i>
@@ -99,12 +117,19 @@
                     <div class="message-area">
                         <div 
                         class="message"
-                        v-for="(messages) in contacts[activePosition].messages">
+                        v-for="(messages, index) in contacts[activePosition].messages">
                             <div 
-                            :class="messages.status === 'sent' ? 'sent' : 'received'">
+                            :class="messages.status === 'sent' ? 'sent' : 'received'"
+                            @click="popUpVisibility(activePosition, index)">
                                 <p> {{messages.message}} </p>
                                 <div class="time">
-                                    <span> {{messages.date}} </span>
+                                    <span> {{messages.hour}} </span>
+                                </div>
+                                <div class="pop_up-option"
+                                :class="messages.clicked ? 'd_block' : 'd_none'">
+                                    <a href="" class="message-info">Info messaggio</a>
+                                    <a href="" class="delete-message"
+                                    @click.prevent="deleteMessage(activePosition, index)">Elimina messaggio</a>
                                 </div>
                             </div>
                         </div>
